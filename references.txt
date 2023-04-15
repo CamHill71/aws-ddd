@@ -1,0 +1,5 @@
+// Getting Started in Node.js info on npm aws sdk 
+https://docs.aws.amazon.com/en_us/sdk-for-javascript/v2/developer-guide/getting-started-nodejs.html
+
+
+https://www.npmjs.com/package/aws-sdk
