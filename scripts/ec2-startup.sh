@@ -4,7 +4,7 @@ sudo yum install -y nodejs
 sudo yum install -y git
 cd home/ec2-user
 git clone https://github.com/CamHill71/aws-ddd.git
-cd hbfl
+cd aws-ddd
 npm i
 npm run start
 

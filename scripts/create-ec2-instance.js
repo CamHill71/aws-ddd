@@ -45,13 +45,13 @@ async function createSecurityGroup (sgName) {
     GroupId: data.GroupId,
     IpPermissions: [
       {
-        ipProtocol: 'tcp',
+        IpProtocol: 'tcp',
         FromPort:22,
         ToPort:22,
         IpRanges:[{CidrIp: '0.0.0.0/0'}]
       },
       {
-        ipProtocol: 'tcp',
+        IpProtocol: 'tcp',
         FromPort:3000,
         ToPort:3000,
         IpRanges:[{CidrIp: '0.0.0.0/0'}]
