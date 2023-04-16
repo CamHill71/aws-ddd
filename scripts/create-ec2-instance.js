@@ -3,7 +3,8 @@ const {
   EC2Client,
   AuthorizeSecurityGroupIngressCommand,
   CreateKeyPairCommand,
-  CreateSecurityGroupCommand
+  CreateSecurityGroupCommand,
+  RunInstancesCommand,
 } = require('@aws-sdk/client-ec2')
 
 const helpers = require('./helpers')
@@ -21,9 +22,9 @@ const keyName = 'hamster_key'
 // Do all the things together
 async function execute () {
   try {
-    //await createSecurityGroup(sgName)
-    //const keyPair = await createKeyPair(keyName)
-    //await helpers.persistKeyPair(keyPair)
+    await createSecurityGroup(sgName)
+    const keyPair = await createKeyPair(keyName)
+    await helpers.persistKeyPair(keyPair)
     const data = await createInstance(sgName, keyName)
     console.log('Created instance with:', data)
   } catch (err) {
@@ -70,18 +71,20 @@ async function createKeyPair (keyName) {
 }
 
 async function createInstance (sgName, keyName) {
-  console.debug({sgName});
-  const params = {
+   const params = {
     // From AWS Amazon Linux 2023 AMI(Amazon Machine Image) ID
     ImageId: 'ami-0d9f286195031c3d9',
     InstanceType: 't2.micro',
     KeyName: keyName,    
-    SecurityGroup:[sgName],
+    SecurityGroups:[sgName],
     MaxCount: 1,
     MinCount:1,
     UserData: "IyEvYmluL2Jhc2gKY3VybCAtLXNpbGVudCAtLWxvY2F0aW9uIGh0dHBzOi8vcnBtLm5vZGVzb3VyY2UuY29tL3NldHVwXzE2LnggfCBzdWRvIGJhc2ggLQpzdWRvIHl1bSBpbnN0YWxsIC15IG5vZGVqcwpzdWRvIHl1bSBpbnN0YWxsIC15IGdpdApjZCBob21lL2VjMi11c2VyCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vQ2FtSGlsbDcxL2F3cy1kZGQuZ2l0CmNkIGhiZmwKbnBtIGkKbnBtIHJ1biBzdGFydA=="
 
   }
+
+  const command = new RunInstancesCommand(params);
+  return sendCommand(command);
 }
 
 execute()
