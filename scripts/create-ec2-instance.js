@@ -22,9 +22,9 @@ const keyName = 'hamster_key'
 // Do all the things together
 async function execute () {
   try {
-    await createSecurityGroup(sgName)
-    const keyPair = await createKeyPair(keyName)
-    await helpers.persistKeyPair(keyPair)
+    //await createSecurityGroup(sgName)
+    //const keyPair = await createKeyPair(keyName)
+    //await helpers.persistKeyPair(keyPair)
     const data = await createInstance(sgName, keyName)
     console.log('Created instance with:', data)
   } catch (err) {
@@ -71,7 +71,7 @@ async function createKeyPair (keyName) {
 }
 
 async function createInstance (sgName, keyName) {
-   const params = {
+  const params = {
     // From AWS Amazon Linux 2023 AMI(Amazon Machine Image) ID
     ImageId: 'ami-0d9f286195031c3d9',
     InstanceType: 't2.micro',
@@ -79,9 +79,8 @@ async function createInstance (sgName, keyName) {
     SecurityGroups:[sgName],
     MaxCount: 1,
     MinCount:1,
-    UserData: "IyEvYmluL2Jhc2gKY3VybCAtLXNpbGVudCAtLWxvY2F0aW9uIGh0dHBzOi8vcnBtLm5vZGVzb3VyY2UuY29tL3NldHVwXzE2LnggfCBzdWRvIGJhc2ggLQpzdWRvIHl1bSBpbnN0YWxsIC15IG5vZGVqcwpzdWRvIHl1bSBpbnN0YWxsIC15IGdpdApjZCBob21lL2VjMi11c2VyCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vQ2FtSGlsbDcxL2F3cy1kZGQuZ2l0CmNkIGF3cy1kZGQKbnBtIGkKbnBtIHJ1biBzdGFydA=="
-  }
-
+    UserData: "IyEvYmluL2Jhc2gKY3VybCAtby0gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL252bS1zaC9udm0vdjAuMzkuMy9pbnN0YWxsLnNoIHwgYmFzaApzdWRvIHl1bSBpbnN0YWxsIC15IG5vZGVqcwpzdWRvIHl1bSBpbnN0YWxsIC15IGdpdApjZCAvaG9tZS9lYzItdXNlcgpnaXQgY2xvbmUgaHR0cHM6Ly9naXRodWIuY29tL0NhbUhpbGw3MS9hd3MtZGRkLmdpdApjZCBhd3MtZGRkCnN1ZG8gbnBtIHJ1biBidWlsZApzdWRvIG5wbSBpCm5wbSBydW4gc3RhcnQK"
+  };
   const command = new RunInstancesCommand(params);
   return sendCommand(command);
 }
