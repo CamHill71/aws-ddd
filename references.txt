@@ -3,3 +3,6 @@ https://docs.aws.amazon.com/en_us/sdk-for-javascript/v2/developer-guide/getting-
 
 
 https://www.npmjs.com/package/@aws-sdk/client-ec2
+
+// to change user data aws runtime .sh script
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
