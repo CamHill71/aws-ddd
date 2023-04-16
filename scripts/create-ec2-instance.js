@@ -3,8 +3,7 @@ const {
   EC2Client,
   AuthorizeSecurityGroupIngressCommand,
   CreateKeyPairCommand,
-  CreateSecurityGroupCommand,
-  RunInstancesCommand
+  CreateSecurityGroupCommand
 } = require('@aws-sdk/client-ec2')
 
 const helpers = require('./helpers')
@@ -22,9 +21,9 @@ const keyName = 'hamster_key'
 // Do all the things together
 async function execute () {
   try {
-    ///await createSecurityGroup(sgName)
-    //const keyPair = await createKeyPair(keyName)
-    //await helpers.persistKeyPair(keyPair)
+    await createSecurityGroup(sgName)
+    const keyPair = await createKeyPair(keyName)
+    await helpers.persistKeyPair(keyPair)
     const data = await createInstance(sgName, keyName)
     console.log('Created instance with:', data)
   } catch (err) {
@@ -37,29 +36,29 @@ async function createSecurityGroup (sgName) {
   const sgParams = {
     Description: sgName,
     GroupName: sgName
-  };
-  const createCommand = new CreateSecurityGroupCommand(sgParams);
-  const data = await sendCommand(createCommand);
+  }
+  const createCommand = new CreateSecurityGroupCommand(sgParams)
+  const data = await sendCommand(createCommand)
 
   const rulesParams = {
     GroupId: data.GroupId,
     IpPermissions: [
       {
-        IpProtocol: 'tcp',
+        ipProtocol: 'tcp',
         FromPort:22,
         ToPort:22,
         IpRanges:[{CidrIp: '0.0.0.0/0'}]
       },
       {
-        IpProtocol: 'tcp',
+        ipProtocol: 'tcp',
         FromPort:3000,
         ToPort:3000,
         IpRanges:[{CidrIp: '0.0.0.0/0'}]
       }
     ]
   }
-  const authCommand = new AuthorizeSecurityGroupIngressCommand(rulesParams);
-  return sendCommand(authCommand);
+  const authCommand = new AuthorizeSecurityGroupIngressCommand(rulesParams)
+  return sendCommand(authCommand)
 }
 
 async function createKeyPair (keyName) {
@@ -78,13 +77,8 @@ async function createInstance (sgName, keyName) {
     KeyName: keyName,    
     SecurityGroup:[sgName],
     MaxCount: 1,
-    MinCount:1,
-    // base64 from ec2-startup.sh
-    UserData: 'IyEvYmluL2Jhc2gKY3VybCAtLXNpbGVudCAtLWxvY2F0aW9uIGh0dHBzOi8vcnBtLm5vZGVzb3VyY2UuY29tL3NldHVwXzE2LnggfCBzdWRvIGJhc2ggLQpzdWRvIHl1bSBpbnN0YWxsIC15IG5vZGVqcwpzdWRvIHl1bSBpbnN0YWxsIC15IGdpdApjZCBob21lL2VjMi11c2VyCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vQ2FtSGlsbDcxL2F3cy1kZGQuZ2l0CmNkIGhiZmwKbnBtIGkKbnBtIHJ1biBzdGFydA=='
-    //UserData: 'IyEvYmluL2Jhc2gKeXVtIGluc3RhbGwgaHR0cGQgLXkKc3lzdGVtY3RsIGVuYWJsZSBodHRwZApzeXN0ZW1jdGwgc3RhcnQgaHR0cGQ='
+    MinCount:1
   }
-  const command = new RunInstancesCommand(params)
-  return sendCommand(command)
 }
 
 execute()
