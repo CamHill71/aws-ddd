@@ -79,7 +79,7 @@ async function createInstance (sgName, keyName) {
     SecurityGroups:[sgName],
     MaxCount: 1,
     MinCount:1,
-    UserData: "IyEvYmluL2Jhc2gKY3VybCAtby0gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL252bS1zaC9udm0vdjAuMzkuMy9pbnN0YWxsLnNoIHwgYmFzaApzdWRvIHl1bSBpbnN0YWxsIC15IG5vZGVqcwpzdWRvIHl1bSBpbnN0YWxsIC15IGdpdApjZCAvaG9tZS9lYzItdXNlcgpnaXQgY2xvbmUgaHR0cHM6Ly9naXRodWIuY29tL0NhbUhpbGw3MS9hd3MtZGRkLmdpdApjZCBhd3MtZGRkCnN1ZG8gbnBtIGkKc3VkbyBucG0gcnVuIGJ1aWxkCm5wbSBydW4gc3RhcnQ="
+    UserData: "IyEvYmluL2Jhc2gKY3VybCAtby0gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL252bS1zaC9udm0vdjAuMzkuMy9pbnN0YWxsLnNoIHwgYmFzaApzdWRvIHl1bSBpbnN0YWxsIC15IG5vZGVqcwpzdWRvIHl1bSBpbnN0YWxsIC15IGdpdApjZCAvaG9tZS9lYzItdXNlcgpnaXQgY2xvbmUgaHR0cHM6Ly9naXRodWIuY29tL0NhbUhpbGw3MS9hd3MtZGRkLmdpdApjZCBhd3MtZGRkCnN1ZG8gbnBtIGkKc3VkbyBucG0gcnVuIHN0YXJ0"
   };
   const command = new RunInstancesCommand(params);
   return sendCommand(command);

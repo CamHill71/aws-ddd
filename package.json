@@ -9,6 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-auto-scaling": "^3.312.0",
+    "@aws-sdk/client-ec2": "^3.312.0",
+    "@aws-sdk/client-elastic-load-balancing-v2": "^3.312.0",
+    "@aws-sdk/client-iam": "^3.312.0",
+    "@aws-sdk/client-s3": "^3.312.0",
     "aws-sdk": "^2.1359.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
