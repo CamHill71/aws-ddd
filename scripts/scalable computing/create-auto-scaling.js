@@ -11,7 +11,8 @@ const asgName = 'hamsterASG'
 const ltName = 'hamsterLT'
 const policyName = 'hamsterPolicy'
 // from created load balancer
-const tgArn = 'arn:aws:elasticloadbalancing:ap-southeast-2:089544927069:targetgroup/hamsterTG/6d7180252ab1f7fc'
+const tgArn = 'arn:aws:elasticloadbalancing:ap-southeast-2:089544927069:targetgroup/hamsterTG/06a27b4dc4a705d7'
+
 
 async function execute () {
   try {
@@ -28,7 +29,7 @@ function createAutoScalingGroup (asgName, ltName) {
     AutoScalingGroupName:asgName,
     AvailabilityZones: [
       'ap-southeast-2b',
-      'ap-southeast-2a'
+      'ap-southeast-2a'      
     ],
     LaunchTemplate:{
       LaunchTemplateName:ltName

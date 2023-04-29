@@ -9,17 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-api-gateway": "^3.312.0",
     "@aws-sdk/client-auto-scaling": "^3.312.0",
+    "@aws-sdk/client-cloudfront": "^3.315.0",
+    "@aws-sdk/client-cloudwatch": "^3.315.0",
+    "@aws-sdk/client-dynamodb": "^3.312.0",
     "@aws-sdk/client-ec2": "^3.312.0",
     "@aws-sdk/client-elastic-load-balancing-v2": "^3.312.0",
+    "@aws-sdk/client-elasticache": "^3.312.0",
     "@aws-sdk/client-iam": "^3.312.0",
+    "@aws-sdk/client-kinesis": "^3.315.0",
+    "@aws-sdk/client-lambda": "^3.315.0",
+    "@aws-sdk/client-rds": "^3.314.0",
     "@aws-sdk/client-s3": "^3.312.0",
+    "@aws-sdk/client-sns": "^3.315.0",
+    "@aws-sdk/client-sqs": "^3.315.0",
+    "@aws-sdk/lib-dynamodb": "^3.312.0",
+    "@hapi/hapi": "^21.3.1",
+    "archiver": "^5.3.1",
     "aws-sdk": "^2.1359.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "stream-buffers": "^3.0.2",
     "uuid": "^9.0.0"
   }
 }

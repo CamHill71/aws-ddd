@@ -204,7 +204,7 @@ module.exports = require("url");
 
 /***/ }),
 
-/***/ 7534:
+/***/ 8278:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -574,7 +574,7 @@ const route_regex_namespaceObject = require("next/dist/shared/lib/router/utils/r
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [961,92], () => (__webpack_exec__(7534)));
+var __webpack_exports__ = __webpack_require__.X(0, [961,92], () => (__webpack_exec__(8278)));
 module.exports = __webpack_exports__;
 
 })();

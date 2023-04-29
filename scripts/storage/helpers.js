@@ -15,7 +15,9 @@ async function sendS3Command (command) {
 
 function getPublicFiles () {
   return new Promise((resolve, reject) => {
-    glob('../../public/**/*.*', (err, files) => {
+    //change glob to 'public' for react.js 'out' for next.js
+    glob('../../out/**/*.*', (err, files) => {
+      console.log({files})
       if (err) reject(err)
       else {
         const filePromises = files.map((file) => {
@@ -32,7 +34,7 @@ function getPublicFiles () {
           return fileContents.map((contents, i) => {
             return {
               contents,
-              name: files[i].replace('../../public/', '')
+              name: files[i].replace('../../out/', '')
             }
           })
         })

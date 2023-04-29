@@ -110,7 +110,7 @@ module.exports = require("url");
 
 /***/ }),
 
-/***/ 2778:
+/***/ 7046:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -166,7 +166,7 @@ function GET() {
 
 const dynamic = 'force-static'
 
-;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?page=%2Ffavicon.ico%2Froute&name=app%2Ffavicon.ico%2Froute&pagePath=private-next-app-dir%2Ffavicon.ico&appDir=C%3A%5CUsers%5Ctafe2%5COneDrive%20-%20TAFE%5CDesktop%5CAWS%5Caws-developer-designing-developing%5Caws-ddd%5Capp&appPaths=%2Ffavicon.ico&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&assetPrefix=&nextConfigOutput=!
+;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?page=%2Ffavicon.ico%2Froute&name=app%2Ffavicon.ico%2Froute&pagePath=private-next-app-dir%2Ffavicon.ico&appDir=C%3A%5CUsers%5Ctafe2%5COneDrive%20-%20TAFE%5CDesktop%5CAWS%5Caws-developer-designing-developing%5Caws-ddd%5Capp&appPaths=%2Ffavicon.ico&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&assetPrefix=&nextConfigOutput=export!
 
     
 
@@ -178,7 +178,7 @@ const dynamic = 'force-static'
     userland: favicon_next_metadata_namespaceObject,
     pathname: "/favicon.ico",
     resolvedPagePath: "next-metadata-route-loader?pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js!C:\\Users\\tafe2\\OneDrive - TAFE\\Desktop\\AWS\\aws-developer-designing-developing\\aws-ddd\\app\\favicon.ico?__next_metadata",
-    nextConfigOutput: undefined,
+    nextConfigOutput: "export",
   })
 
     // Pull out the exports that we need to expose from the module. This should
@@ -203,7 +203,7 @@ const dynamic = 'force-static'
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [961,601,529], () => (__webpack_exec__(2778)));
+var __webpack_exports__ = __webpack_require__.X(0, [961,601,529], () => (__webpack_exec__(7046)));
 module.exports = __webpack_exports__;
 
 })();

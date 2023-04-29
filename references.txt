@@ -9,3 +9,9 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
 
 // Tutorial: Setting Up Node.js on an Amazon EC2 Instance
 https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
+
+// for Next.js Static HTML Export
+https://nextjs.org/docs/advanced-features/static-html-export#usage
+
+// Deleting roles or instance profiles
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html
